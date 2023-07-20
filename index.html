@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>水メモ</title>
+</head>
+<body>
+
+    <main>
+        <div class="input-area">
+            <div class="input-area_text">
+                <label for="input_water">飲んだ量を入力してください</label>
+                <input type="text" name="input_water" id="input_water">
+            </div>
+            <div class="input-area_button">
+                <input id="submit" type="submit" value="送信する">
+            </div>
+        </div>
+        
+        <div class="log-area">
+            <h1>本日の履歴を表示します。</h1>
+            <ul id="log-area_list">
+            </ul>
+        </div>
+
+        <div class="result-area">
+            <h1>本日の結果表示</h1>
+            <ul id="result"></ul>
+        </div>
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

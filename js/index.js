@@ -42,7 +42,7 @@ function input(){
 
         json = localStorage.getItem('result_log');
         result_water = JSON.parse(json);
-        console.log("ローカルストレージ：" + result_water);
+        console.log("ローカルストレージ：" + result_log);
     }
 }
 

@@ -34,6 +34,16 @@ function input(){
 
     // 前回の入力値をクリアする
     in_water.value = "";
+
+    // ローカルストレージに配列を保存する
+    if (window.localStorage) {
+        let json = JSON.stringify(result_water, undefined, 1);
+        localStorage.setItem('result_log', json);
+
+        json = localStorage.getItem('result_log');
+        result_water = JSON.parse(json);
+        console.log("ローカルストレージ：" + result_water);
+    }
 }
 
 // ボタン押下でイベント発火

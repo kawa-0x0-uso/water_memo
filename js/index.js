@@ -21,14 +21,14 @@ function input(){
     log_list.textContent = in_water.value + "ml" ;
     log_area.appendChild(log_list);
 
-    // 合計値を計算して表示
+    // 合計値を計算して表示する
     total_score = result_water.reduce(function(sum,element){
         return sum + element;
     },0);
 
     console.log("合計値：" + total_score);
 
-    // 進捗率を計算して表示
+    // 進捗率を計算して表示する
     let progress = total_score / target * 100;
     console.log("進捗率：" + progress +"％");
 

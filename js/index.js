@@ -3,6 +3,7 @@ let submit = document.getElementById('submit');
 let log_area = document.getElementById('log-area_list');
 
 let result_water = [];
+let result_log = [];
 
 let total_score = 0;
 
@@ -14,6 +15,7 @@ function input(){
 
     // 入力された値を配列に格納
     result_water.push(parseInt(in_water.value));
+    result_log.push(parseInt(in_water.value));
     console.log("今まで入力された値：" + result_water);
 
     // 履歴を入力
@@ -36,14 +38,6 @@ function input(){
     in_water.value = "";
 
     // ローカルストレージに配列を保存する
-    if (window.localStorage) {
-        let json = JSON.stringify(result_water, undefined, 1);
-        localStorage.setItem('result_log', json);
-
-        json = localStorage.getItem('result_log');
-        result_water = JSON.parse(json);
-        console.log("ローカルストレージ：" + result_water);
-    }
 }
 
 // ボタン押下でイベント発火

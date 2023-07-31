@@ -40,7 +40,7 @@ function input(){
 
     console.log("合計値：" + total_score);
 
-    // 進捗率を計算して表示する
+    // 進捗率を計算して表示する 
     let progress = total_score / target * 100;
     console.log("進捗率：" + progress +"％");
 

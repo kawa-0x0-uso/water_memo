@@ -2,12 +2,7 @@ let in_water = document.getElementById('input_water');
 let submit = document.getElementById('submit');
 let log_area = document.getElementById('log-area_list');
 
-<<<<<<< HEAD
 let input_water = new Array();
-=======
-let result_water = [];
-let result_log = [];
->>>>>>> ローカルストレージに履歴を保存
 
 // ローカルストレージオブジェクトを代入
 const storage = localStorage;
@@ -30,14 +25,8 @@ function input(){
     console.log("入力された値：" + in_water.value);
 
     // 入力された値を配列に格納
-<<<<<<< HEAD
     input_water.push(parseInt(in_water.value));
     console.log("今まで入力された値：" + input_water);
-=======
-    result_water.push(parseInt(in_water.value));
-    result_log.push(parseInt(in_water.value));
-    console.log("今まで入力された値：" + result_water);
->>>>>>> ローカルストレージに履歴を保存
 
     // 履歴を入力
     let log_list = document.createElement('li');
@@ -58,7 +47,6 @@ function input(){
     // 入力された値をクリアする
     in_water.value = "";
 
-<<<<<<< HEAD
     // ローカルストレージへ保存
     list.push(input_water);
     storage.water_log = JSON.stringify(list);
@@ -66,9 +54,6 @@ function input(){
     localStorage.removeItem('water_log');
     localStorage.removeItem('list');
 
-=======
-    // ローカルストレージに配列を保存する
->>>>>>> ローカルストレージに履歴を保存
 }
 
 // ボタン押下でイベント発火

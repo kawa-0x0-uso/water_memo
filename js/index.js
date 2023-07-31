@@ -51,9 +51,6 @@ function input(){
     list.push(input_water);
     storage.water_log = JSON.stringify(list);
     console.log("保存後：" + list);
-    localStorage.removeItem('water_log');
-    localStorage.removeItem('list');
-
 }
 
 // ボタン押下でイベント発火

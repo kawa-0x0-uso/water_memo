@@ -7,20 +7,19 @@ let input_water = new Array();
 // ローカルストレージオブジェクトを代入
 const storage = localStorage;
 
-let list = [];
+let log = [];
 
 // 目標値
 const target = "2000" ;
 
 function input(){
-    // ローカルストレージからロードする
-    const json = storage.water_log;
-    if(json == undefined){
-        return;
-    }
+    // const json = storage.water_log;
+    // if(json == undefined){
+    //     return;
+    // }
 
-    list = JSON.parse(json);
-    console.log("ロード後：" + list);
+    // log = JSON.parse(json);
+    // console.log("ロード後：" + log);
 
     console.log("入力された値：" + in_water.value);
 
@@ -40,7 +39,7 @@ function input(){
 
     console.log("合計値：" + total_score);
 
-    // 進捗率を計算して表示する 
+    // 進捗率を計算して表示する
     let progress = total_score / target * 100;
     console.log("進捗率：" + progress +"％");
 
@@ -48,9 +47,10 @@ function input(){
     in_water.value = "";
 
     // ローカルストレージへ保存
-    list.push(input_water);
-    storage.water_log = JSON.stringify(list);
-    console.log("保存後：" + list);
+    const log = [];
+    log.push(input_water);
+    storage.water_log = JSON.stringify(log);
+    console.log("保存後：" + log);
 }
 
 // ボタン押下でイベント発火

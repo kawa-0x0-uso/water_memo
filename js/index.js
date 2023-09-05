@@ -32,7 +32,7 @@ let saveData = (result) =>{
 // ローカルストレージの値をクリアする
 let clearData = () =>{
     // リサルトの値を初期化
-    result = [];
+    result = [0];
     // 初期化したデータを上書き保存
     saveData(result);
 }

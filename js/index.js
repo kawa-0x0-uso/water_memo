@@ -14,7 +14,15 @@ let log = document.getElementById('log-area_list');
 const target = "2000" ;
 
 let result = [];
+// ローカルストレージの値をロードする
 result = JSON.parse(STORAGE.getItem('waterLog'));
+
+// 今まで入力された値を出力する
+for(let i= 0;i<result.length;i++){
+    let todayLog = document.createElement('li');
+    todayLog.textContent = result[i]+"ml";
+    log.appendChild(todayLog);
+}
 
 // ローカルストレージに値を保存する
 let saveData = (result) =>{
@@ -27,13 +35,6 @@ let clearData = () =>{
     result = [];
     // 初期化したデータを上書き保存
     saveData(result);
-}
-
-// 今まで入力された値を出力する
-for(let i= 0;i<result.length;i++){
-    let todayLog = document.createElement('li');
-    todayLog.textContent = result[i]+"ml";
-    log.appendChild(todayLog);
 }
 
 // テキストエリアから入力された値を取得し、配列に格納する

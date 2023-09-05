@@ -30,7 +30,7 @@ let clearData = () =>{
 
 // 今まで入力された値を出力する
 let loadLog = () => {
-    if(result.length == 0){
+    if(result.length = 0){
     // 配列resultがない場合はスキップする
         return;
     }else{
@@ -45,7 +45,7 @@ let loadLog = () => {
 
 // テキストエリアから入力された値を取得し、配列に格納する
 let getInput = () =>{
-    if(result.length == 0){
+    if(result.length = 0){
         // 配列resultがない時は空の配列を用意
         let result = [];
     }else{

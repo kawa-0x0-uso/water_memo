@@ -1,8 +1,5 @@
 // ローカルストレージオブジェクトを代入
 const STORAGE = localStorage;
-// ローカルストレージに保存されている値をロードする。
-let result = [];
-result = JSON.parse(STORAGE.getItem('waterLog'));
 
 // 入力された値を取得するためのIDを取得
 let input = document.getElementById('input_water');
@@ -30,13 +27,10 @@ let clearData = () =>{
 }
 
 // 今まで入力された値を出力する
-let loadLog = () => {
-    // 本日の履歴に数値を表示する
-    for(let i= 0;i<result.length;i++){
-        let todayLog = document.createElement('li');
-        todayLog.textContent = result[i]+"ml";
-        log.appendChild(todayLog);
-    }
+for(let i= 0;i<result.length;i++){
+    let todayLog = document.createElement('li');
+    todayLog.textContent = result[i]+"ml";
+    log.appendChild(todayLog);
 }
 
 // テキストエリアから入力された値を取得し、配列に格納する
@@ -54,9 +48,6 @@ let getInput = () =>{
     // ローカルストレ―ジに保存する
     saveData(result);
 }
-
-// 画面を読み込んだら本日の履歴を表示する
-window.addEventListener('DOMContentLoaded',loadLog);
 
 // ボタン押下でイベント発火
 submit.addEventListener('click',getInput);

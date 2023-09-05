@@ -30,11 +30,16 @@ let clearData = () =>{
 
 // 今まで入力された値を出力する
 let loadLog = () => {
+    if(result.length == 0){
+    // 配列resultがない場合はスキップする
+        return;
+    }else{
     // 本日の履歴に数値を表示する
     for(let i= 0;i<result.length;i++){
         let todayLog = document.createElement('li');
         todayLog.textContent = result[i]+"ml";
         log.appendChild(todayLog);
+    }
     }
 }
 

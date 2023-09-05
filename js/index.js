@@ -25,21 +25,38 @@ let clearData = () =>{
     // リサルトの値を初期化
     result = [];
     // 初期化したデータを上書き保存
-    STORAGE.setItem('waterLog',JSON.stringify(result));
+    saveData(result);
+}
+
+// 今まで入力された値を出力する
+let loadLog = () => {
+    // 本日の履歴に数値を表示する
+    for(let i= 0;i<result.length;i++){
+        let todayLog = document.createElement('li');
+        todayLog.textContent = result[i]+"ml";
+        log.appendChild(todayLog);
+    }
 }
 
 // テキストエリアから入力された値を取得し、配列に格納する
 let getInput = () =>{
-    // 配列に入力された値を追加する
+    // 保存用の列に入力された値を追加する
     result.push(input_water.value);
-    console.log(result);
+
+    // 本日の履歴に数値を追加表示する
+    let log_list = document.createElement('li');
+        log_list.textContent = input_water.value+"ml";
+        log.appendChild(log_list);
 
     // 入力された値の初期化（テキストフォームから値を消す）
     input_water.value = "";
 
-    // ローカルストレ―ジに保存
+    // ローカルストレ―ジに保存する
     saveData(result);
 }
+
+// 画面を読み込んだら本日の履歴を表示する
+window.addEventListener('DOMContentLoaded',loadLog);
 
 // ボタン押下でイベント発火
 submit.addEventListener('click',getInput);

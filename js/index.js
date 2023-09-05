@@ -40,8 +40,16 @@ let loadLog = () => {
 
 // テキストエリアから入力された値を取得し、配列に格納する
 let getInput = () =>{
-    // 保存用の列に入力された値を追加する
-    result.push(input_water.value);
+    
+    
+
+    if(result.length == 0){
+        // 配列resultがない時は空の配列を用意
+        let result = [];
+    }else{
+        // 保存用の列に入力された値を追加する
+        result.push(input_water.value);
+    }
 
     // 本日の履歴に数値を追加表示する
     let log_list = document.createElement('li');

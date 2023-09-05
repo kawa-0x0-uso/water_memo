@@ -13,6 +13,9 @@ let log = document.getElementById('log-area_list');
 // 目標値
 const target = "2000" ;
 
+let result = [];
+result = JSON.parse(STORAGE.getItem('waterLog'));
+
 // ローカルストレージに値を保存する
 let saveData = (result) =>{
     STORAGE.setItem('waterLog',JSON.stringify(result));
